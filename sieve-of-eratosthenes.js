@@ -58,10 +58,10 @@ const eratosthenesTest = (end, type) => {
     const primeSieve = new SieveOfEratosthenes(end, type);
     const endTime = performance.now();
 
-    console.log(`attempt: ${end.toString().padStart(10, ' ')}, time: ${(endTime - startTime).toFixed(10).toString().padStart(20, ' ')}ms, primes: ${primeSieve.countPrimes().toString().padStart(12, ' ')}, in: ${primeSieve.type.name}`);
+    console.log(`attempt: ${end.toString().padStart(10, ' ')}, time: ${(endTime - startTime).toFixed(5).toString().padStart(15, ' ')}ms, primes: ${primeSieve.countPrimes().toString().padStart(12, ' ')}, in: ${primeSieve.type.name}`);
 }
 
-for (let i = 0; i <= 40; i++) {
+for (let i = 0; i <= 32; i++) {
     // eratosthenesTest(2 ** i, Uint32Array);
     eratosthenesTest(2 ** i, Uint16Array); // fastest
     // eratosthenesTest(2 ** i, Uint8Array);
